@@ -1,0 +1,108 @@
+:root {
+    /* Extended Color Palette */
+    --primary-color: #4361ee;  /* More vibrant blue */
+    --secondary-color: #7209b7; /* Rich purple */
+    --success-color: #4cc9f0;   /* Bright teal */
+    --danger-color: #f72585;    /* Electric pink */
+    --warning-color: #f8961e;   /* Warm orange */
+    --info-color: #4895ef;      /* Sky blue */
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --muted-color: #6c757d;
+    --border-color: #e9ecef;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --hover-darken: 10%;
+    --active-darken: 15%;
+
+    /* New Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, #4361ee, #3a0ca3);
+    --gradient-success: linear-gradient(135deg, #4cc9f0, #4895ef);
+    --gradient-danger: linear-gradient(135deg, #f72585, #b5179e);
+}
+
+/* Button Enhancements */
+.btn {
+    /* ... (keep existing base styles) ... */
+    transition: all 0.2s ease-in-out, transform 0.1s ease;
+}
+
+/* Gradient Buttons */
+.btn-gradient-primary {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+}
+.btn-gradient-primary:hover {
+    background: linear-gradient(135deg, #3a0ca3, #4361ee);
+    transform: translateY(-2px);
+}
+
+/* New Button Variants */
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--secondary-color) 90%, black);
+}
+
+/* Neon Glow Effect (Optional) */
+.btn-neon {
+    box-shadow: 0 0 10px rgba(72, 149, 239, 0.7);
+}
+.btn-neon:hover {
+    box-shadow: 0 0 20px rgba(72, 149, 239, 0.9);
+}
+
+/* Table Enhancements */
+th {
+    background: var(--gradient-primary);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* New Status Badges */
+.badge-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.badge-warning {
+    background-color: var(--warning-color);
+    color: var(--dark-color); /* Dark text for contrast */
+}
+
+/* Hover Effects */
+tr:hover td {
+    background-color: rgba(0, 0, 0, 0.03);
+    transform: scale(1.01);
+    transition: all 0.1s ease;
+}
+
+/* Focus States */
+.btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.5);
+}
+
+/* New Utility Classes */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: var(--gradient-primary);
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #343a40;
+        --dark-color: #f8f9fa;
+        --border-color: #495057;
+    }
+    table {
+        background-color: #212529;
+    }
+    td {
+        color: #e9ecef;
+    }
+}

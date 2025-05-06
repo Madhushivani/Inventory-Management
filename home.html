@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">Dashboard</h2>
+
+    <div class="row g-3">
+        <!-- Products Summary -->
+        <div class="col-md-4">
+            <a href="{{ url_for('view_products') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-box-seam fs-2 text-primary"></i>
+                        <h5 class="card-title mt-2">Products</h5>
+                        <p class="h3">{{ products|length }}</p>
+                        <small class="text-muted">Total products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Locations Summary -->
+        <div class="col-md-4">
+            <a href="{{ url_for('view_locations') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-geo-alt fs-2 text-success"></i>
+                        <h5 class="card-title mt-2">Locations</h5>
+                        <p class="h3">{{ locations|length }}</p>
+                        <small class="text-muted">Warehouse locations</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Movements Summary -->
+        <div class="col-md-4">
+            <a href="{{ url_for('view_movements') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-arrow-left-right fs-2 text-info"></i>
+                        <h5 class="card-title mt-2">Movements</h5>
+                        <p class="h3">{{ movements_count }}</p>
+                        <small class="text-muted">Recent movements</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <strong><i class="bi bi-clock-history me-1"></i>Recent Activity</strong>
+        </div>
+        <div class="card-body">
+            {% if recent_activities %}
+                <ul class="list-group">
+                    {% for activity in recent_activities %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <span class="badge bg-{{ activity.type_color }}">{{ activity.type }}</span>
+                            {{ activity.description }}
+                        </div>
+                        <small class="text-muted">
+                            {{ activity.timestamp.strftime('%Y-%m-%d %H:%M') if activity.timestamp else 'N/A' }}
+                        </small>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">No recent activity.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

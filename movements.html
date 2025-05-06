@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}Inventory Movements{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Inventory Movements</h2>
+        <a href="{{ url_for('add_movement') }}" class="btn btn-primary">
+            <i class="bi bi-plus"></i> Record Movement
+        </a>
+    </div>
+
+    <!-- Buy Movements -->
+    <div class="card mb-4">
+        <div class="card-header">Buy Movements</div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>To Location</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for movement in buy_movements %}
+                    <tr>
+                        <td>{{ movement.movement_id }}</td>
+                        <td>{{ movement.product_name }}</td>
+                        <td>{{ movement.movement_qty }}</td>
+                        <td>{{ movement.to_location }}</td>
+                        <td>{{ movement.timestamp }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="5" class="text-center">No buy movements found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Sale Movements -->
+    <div class="card mb-4">
+        <div class="card-header">Sale Movements</div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>From Location</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for movement in sale_movements %}
+                    <tr>
+                        <td>{{ movement.movement_id }}</td>
+                        <td>{{ movement.product_name }}</td>
+                        <td>{{ movement.movement_qty }}</td>
+                        <td>{{ movement.from_location }}</td>
+                        <td>{{ movement.timestamp }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="5" class="text-center">No sale movements found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Transfer Movements -->
+    <div class="card mb-4">
+        <div class="card-header">Transfer Movements</div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>From Location</th>
+                        <th>To Location</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for movement in transfer_movements %}
+                    <tr>
+                        <td>{{ movement.movement_id }}</td>
+                        <td>{{ movement.product_name }}</td>
+                        <td>{{ movement.movement_qty }}</td>
+                        <td>{{ movement.from_location }}</td>
+                        <td>{{ movement.to_location }}</td>
+                        <td>{{ movement.timestamp }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="6" class="text-center">No transfer movements found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
