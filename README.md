@@ -1,10 +1,9 @@
 Images:
 ![report](https://github.com/user-attachments/assets/8e4fb841-3adb-4a52-86c8-c7fb81c5e9f3)
-![product movement](https://github.com/user-attachments/assets/db3d5e3b-c05d-489d-aaff-1d4e![Location](https://github.com/user-attachments/assets/85c34ccb-6b6b-48cd-b170-9b8e5061c6dc)
-f9b2c3bf)
 ![product](https://github.com/user-attachments/assets/729fb4bc-aa70-4b8c-838c-0e56e8ae2694)
-
+![Location](https://github.com/user-attachments/assets/ef7ee53a-1519-41b6-9015-8c7f86504256)
 ![Home](https://github.com/user-attachments/assets/e745f879-305d-4664-80b8-52bfee4a07ae)
+![product movement](https://github.com/user-attachments/assets/2e8a96c3-2fc1-4f9d-a129-3edc5cd74278)
 
 video link:
 https://drive.google.com/file/d/1puXw72YVuIpJ0yRJTxFM96sYRjxgXNCe/view?usp=drive_link
