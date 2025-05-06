@@ -28,6 +28,3 @@ This is an Inventory Management Web Application developed using Flask, MySQL, an
 
 Feel free to fork the repository, submit issues, or open pull requests if you want to contribute improvements.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
